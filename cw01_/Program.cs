@@ -5,7 +5,7 @@ internal class Program
     public static void Main(string[] args)
     {
         int proba = 1; 
-        while (proba <=3)
+        while (proba <= 3)
         {
             
             Console.WriteLine("Podaj nazwę użytkownika: ");
@@ -21,14 +21,15 @@ internal class Program
             } 
             else
             {   
-             if (proba <= 3)
-            {
+                if (proba != 3 )
+                {
                 proba++;
-                Console.WriteLine("Dane niepoprawne.");   
-            }  
-                if (proba == 4)     
+                Console.WriteLine("Dane niepoprawne.");  
+                }
+               else if (proba == 3)     
                 {
                     Console.WriteLine("Przekroczono limit prób logowania, konto zablokowane");
+                    break;
                 }
             }
     }
