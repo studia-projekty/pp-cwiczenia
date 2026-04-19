@@ -62,10 +62,36 @@ if (Wybor == 2)
             {
                 Console.WriteLine("Niepoprawny numer sali");
             }
-
-
-
-
-    }
+         }
     Console.WriteLine($"Liczba poprawnych numerów sal: {poprawneNumery}");
+}
+
+if (Wybor == 3) 
+{
+
+    int punkty = 0;
+    for (int i = 0; i < 5; i++)
+        { 
+            Console.WriteLine("Wpisz czy udzieliłeś odpowiedzi poprawnej na pytanie numer " + (i + 1) + ". (Wpisz 1 dla tak lub 0 dla nie):");
+            int odpowiedz = int.Parse(Console.ReadLine());
+            if (odpowiedz == 1)
+            {
+                punkty++;
+            }
+            
+        }
+        Console.WriteLine("Uczeń zdobył " + punkty + " punktów.");
+        if (punkty >= 3)
+            {
+                Console.WriteLine("Test zaliczony");
+            }
+            else
+            {
+                Console.WriteLine("Test niezaliczony"); 
+                        
+            }
+
+
+
+
 }
