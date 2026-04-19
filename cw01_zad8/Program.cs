@@ -84,14 +84,45 @@ if (Wybor == 3)
         if (punkty >= 3)
             {
                 Console.WriteLine("Test zaliczony");
+                
             }
             else
             {
                 Console.WriteLine("Test niezaliczony"); 
-                        
+                       
             }
+}
 
+if (Wybor == 4) 
+{
 
+int nazwyPoprawne = 0;
+int nazwyZaKrotkie = 0;
+int nazwyZaDlugie = 0;
 
+    for (int i = 0; i < 4; i++)
+        { 
+            Console.WriteLine("Podaj nazwę użytkownika:");
+            string nazwaUzytkownika = Console.ReadLine();
+            if (nazwaUzytkownika.Length < 5)
+                {
+                    nazwyZaKrotkie++;
+                    Console.WriteLine("Nazwa użytkownika jest za krótka. Musi miec co najmniej 5 znaków.");
+                }
+            if (nazwaUzytkownika.Length >= 5 && nazwaUzytkownika.Length < 10)
+                {   
+                    nazwyPoprawne++;
+                    Console.WriteLine("Nazwa użytkownika jest poprawna.");
+                }
+            if (nazwaUzytkownika.Length > 10)
+                {
+                    nazwyZaDlugie++;
+                    Console.WriteLine("Nazwa użytkownika jest za długa.");
+                }
+
+        }
+Console.WriteLine("Ilość poprawnych nazw użytkowników: " + nazwyPoprawne);
+Console.WriteLine("Ilość za krótkich nazw użytkowników: " + nazwyZaKrotkie);
+Console.WriteLine("Ilość zbyt długich nazw użytkowników: " + nazwyZaDlugie);
 
 }
