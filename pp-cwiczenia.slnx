@@ -5,4 +5,7 @@
   <Project Path="cw01_zad6/cw01_zad6.csproj" />
   <Project Path="cw01_zad7/cw01_zad7.csproj" />
   <Project Path="cw01_zad8/cw01_zad8.csproj" />
+  <Project Path="cw02_zad1/cw02_zad1.csproj" />
+  <Project Path="cw02_zad2/cw02_zad2.csproj" />
+  <Project Path="cw02_zad3/cw02_zad3.csproj" />
 </Solution>
