@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\#ProjektyGitHub\\pp-cwiczenia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ABE39D86-5508-4929-BBF9-F9C0B65DE92A}|cw03_zad1\\cw03_zad1.csproj|c:\\#projektygithub\\pp-cwiczenia\\cw03_zad1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE39D86-5508-4929-BBF9-F9C0B65DE92A}|cw03_zad1\\cw03_zad1.csproj|solutionrelative:cw03_zad1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{754B5D18-D21C-49ED-90D8-0361D731DF9F}|cw_02_zad3_powtorka2\\cw02_zad3_powtorka2.csproj|c:\\#projektygithub\\pp-cwiczenia\\cw_02_zad3_powtorka2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{754B5D18-D21C-49ED-90D8-0361D731DF9F}|cw_02_zad3_powtorka2\\cw02_zad3_powtorka2.csproj|solutionrelative:cw_02_zad3_powtorka2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -20,11 +24,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
+              "DocumentMoniker": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw03_zad1\\Program.cs",
+              "RelativeDocumentMoniker": "cw03_zad1\\Program.cs",
+              "ToolTip": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw03_zad1\\Program.cs",
+              "RelativeToolTip": "cw03_zad1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T21:43:30.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
               "DocumentMoniker": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw_02_zad3_powtorka2\\Program.cs",
               "RelativeDocumentMoniker": "cw_02_zad3_powtorka2\\Program.cs",
               "ToolTip": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw_02_zad3_powtorka2\\Program.cs",
               "RelativeToolTip": "cw_02_zad3_powtorka2\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-11T13:56:27.316Z",
               "EditorCaption": ""
