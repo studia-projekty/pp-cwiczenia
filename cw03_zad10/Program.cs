@@ -1,27 +1,28 @@
 ﻿
+int liczba = 1;
 
-
-int liczba = 8;
-
-
-
-for  (int i = 0; i <= liczba; i++)
+while (liczba > 0)
 {
+    Console.WriteLine("Podaj wysokość trójkąta do narysowania: (0 kończy program)");
+    liczba = int.Parse(Console.ReadLine());
 
-    int wysokosc = liczba;
-    
- for (int j = 0; j < liczba; j++)
+    for (int i = 0; i < liczba; i++)
     {
-        if (j < wysokosc)
+        if (i == 0)
         {
-
-
+            Console.Write(new string(' ', liczba));
+            Console.Write("*");
+            Console.WriteLine();
         }
+        else
+        {
+            int gwiazdki = i * 2 + 1;
+            int spacje = liczba - i;
+            Console.Write(new string(' ', spacje));
+            Console.Write(new string('*', gwiazdki));
+            Console.WriteLine();
+        }
+
     }
-    Console.Write(new string('*', i));
-    Console.WriteLine("");
 
-    wysokosc--;
-
-   
 }
