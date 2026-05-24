@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 8
+
 Console.WriteLine("Podaj ile liczb z ciągu fibonacciego wyświetlić");
 
 int n = int.Parse(Console.ReadLine());

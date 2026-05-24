@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 10
+
 int liczba = 1;
 
 while (liczba > 0)

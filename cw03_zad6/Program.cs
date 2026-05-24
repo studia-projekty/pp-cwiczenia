@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 6 
+
 int a = 5;
 int b = 5;
 

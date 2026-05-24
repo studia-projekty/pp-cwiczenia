@@ -1,4 +1,4 @@
-﻿
+﻿//CW03 Zadanie 4
 Console.WriteLine("Podaj liczbę, dla której chcesz obliczyć silnię:");
 
 int liczba = int.Parse(Console.ReadLine());

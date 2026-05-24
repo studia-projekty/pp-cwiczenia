@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 9
+
 Random rand = new Random();
 int liczba = rand.Next(1, 101); // Losuje liczbę od 1 do 100
 
