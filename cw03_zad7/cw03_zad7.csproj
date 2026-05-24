@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\cw02_zad3_powtorka\cw02_zad3_powtorka.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -10,10 +10,14 @@
   <Project Path="cw02_zad3/cw02_zad3.csproj" />
   <Project Path="cw02_zad3_powtorka/cw02_zad3_powtorka.csproj" />
   <Project Path="cw03_zad1/cw03_zad1.csproj" Id="abe39d86-5508-4929-bbf9-f9c0b65de92a" />
+  <Project Path="cw03_zad10/cw03_zad10.csproj" Id="c87ca1d1-0918-4b59-b15b-ffa9ebed4b3c" />
   <Project Path="cw03_zad2/cw03_zad2.csproj" Id="a936adeb-c907-40b9-97c7-0f8a83374f23" />
   <Project Path="cw03_zad3/cw03_zad3.csproj" Id="d9db3780-af98-463c-b813-39077e64cf40" />
   <Project Path="cw03_zad4/cw03_zad4.csproj" Id="213ce954-a6e1-4b32-b487-9249ec2ecd73" />
   <Project Path="cw03_zad5/cw03_zad5.csproj" Id="09178c5d-91f8-4b5c-aec5-3e3ff7f60962" />
   <Project Path="cw03_zad6/cw03_zad6.csproj" Id="f1647aa3-6abd-4dc6-8e67-2482ac6eea1f" />
+  <Project Path="cw03_zad7/cw03_zad7.csproj" Id="83885ccc-ada6-4df0-b351-925b10ff173e" />
+  <Project Path="cw03_zad8/cw03_zad8.csproj" Id="7e0f077c-4298-41e2-8550-a9b0446d1a5b" />
+  <Project Path="cw03_zad9/cw03_zad9.csproj" Id="4ad95636-aa2c-456c-9d37-645efcd399ce" />
   <Project Path="cw_02_zad3_powtorka2/cw02_zad3_powtorka2.csproj" Id="754b5d18-d21c-49ed-90d8-0361d731df9f" />
 </Solution>

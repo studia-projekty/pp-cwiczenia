@@ -1,4 +1,5 @@
-﻿
+﻿//odszukiwani eliczb parzystych i nieparzystych od 1 do 50
+
 int liczba = 1;
 bool czyParzysta = true;
 int parzysta = 0;

@@ -4,7 +4,7 @@ Console.WriteLine("Podaj liczbę n:");
 int liczba = int.Parse(Console.ReadLine());
 int suma = 0;
 
-for(int i=1; i<liczba; i++)
+for(int i=1; i <= liczba; i++)
 {
     suma += i;
 }
