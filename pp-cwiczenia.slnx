@@ -12,5 +12,8 @@
   <Project Path="cw03_zad1/cw03_zad1.csproj" Id="abe39d86-5508-4929-bbf9-f9c0b65de92a" />
   <Project Path="cw03_zad2/cw03_zad2.csproj" Id="a936adeb-c907-40b9-97c7-0f8a83374f23" />
   <Project Path="cw03_zad3/cw03_zad3.csproj" Id="d9db3780-af98-463c-b813-39077e64cf40" />
+  <Project Path="cw03_zad4/cw03_zad4.csproj" Id="213ce954-a6e1-4b32-b487-9249ec2ecd73" />
+  <Project Path="cw03_zad5/cw03_zad5.csproj" Id="09178c5d-91f8-4b5c-aec5-3e3ff7f60962" />
+  <Project Path="cw03_zad6/cw03_zad6.csproj" Id="f1647aa3-6abd-4dc6-8e67-2482ac6eea1f" />
   <Project Path="cw_02_zad3_powtorka2/cw02_zad3_powtorka2.csproj" Id="754b5d18-d21c-49ed-90d8-0361d731df9f" />
 </Solution>
