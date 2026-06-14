@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 7
+
 Console.WriteLine("Podaj zakres liczb dla których przeprowadzone będzie sprawdzanie czy dana liczba należy do liczb pierwszych:");
 
 

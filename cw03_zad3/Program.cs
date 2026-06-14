@@ -1,4 +1,4 @@
-﻿//odszukiwani eliczb parzystych i nieparzystych od 1 do 50
+﻿//CW03 Zadanie 3 odszukiwani eliczb parzystych i nieparzystych od 1 do 50
 
 int liczba = 1;
 bool czyParzysta = true;

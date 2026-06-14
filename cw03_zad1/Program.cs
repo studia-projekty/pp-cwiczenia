@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+//Zadanie 1
 
 Console.WriteLine("Podaj liczbę n:");
 int liczba = int.Parse(Console.ReadLine());

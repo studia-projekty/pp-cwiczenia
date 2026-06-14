@@ -1,4 +1,5 @@
-﻿
+﻿//CW03 Zadanie 5
+
 int ostatniaCyfra = 0;
 int nowaLiczba = 0;
 
