@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\#ProjektyGitHub\\pp-cwiczenia\\",
+  "WorkspaceRootPath": "E:\\#DATA\\#03_Studies\\Podstawy Programowania\\Projekty\\pp-cwiczenia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3FA3823D-42A0-4EFA-A0DB-0C6D8A53950E}|cw04_zad05\\cw04_zad05.csproj|c:\\#projektygithub\\pp-cwiczenia\\cw04_zad05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA3823D-42A0-4EFA-A0DB-0C6D8A53950E}|cw04_zad05\\cw04_zad05.csproj|solutionrelative:cw04_zad05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B78D76C-5F62-4C4F-A63D-3CB4B1A39EC1}|cw04_za01\\cw04_za01.csproj|c:\\#projektygithub\\pp-cwiczenia\\cw04_za01\\cw04_za01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8B78D76C-5F62-4C4F-A63D-3CB4B1A39EC1}|cw04_za01\\cw04_za01.csproj|solutionrelative:cw04_za01\\cw04_za01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC121553-60AC-4923-9A36-42701E933E9C}|cw05_zad02\\cw05_zad02.csproj|c:\\#projektygithub\\pp-cwiczenia\\cw05_zad02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC121553-60AC-4923-9A36-42701E933E9C}|cw05_zad02\\cw05_zad02.csproj|solutionrelative:cw05_zad02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C50AB90B-7BD0-4D5A-A230-FA23AF2CDD7E}|cw04_zad06\\cw04_zad06.csproj|e:\\#data\\#03_studies\\podstawy programowania\\projekty\\pp-cwiczenia\\cw04_zad06\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C50AB90B-7BD0-4D5A-A230-FA23AF2CDD7E}|cw04_zad06\\cw04_zad06.csproj|solutionrelative:cw04_zad06\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +14,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw04_zad05\\Program.cs",
-              "RelativeDocumentMoniker": "cw04_zad05\\Program.cs",
-              "ToolTip": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw04_zad05\\Program.cs",
-              "RelativeToolTip": "cw04_zad05\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "DocumentMoniker": "E:\\#DATA\\#03_Studies\\Podstawy Programowania\\Projekty\\pp-cwiczenia\\cw04_zad06\\Program.cs",
+              "RelativeDocumentMoniker": "cw04_zad06\\Program.cs",
+              "ToolTip": "E:\\#DATA\\#03_Studies\\Podstawy Programowania\\Projekty\\pp-cwiczenia\\cw04_zad06\\Program.cs",
+              "RelativeToolTip": "cw04_zad06\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T14:38:21.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "cw04_za01",
-              "DocumentMoniker": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw04_za01\\cw04_za01.csproj",
-              "RelativeDocumentMoniker": "cw04_za01\\cw04_za01.csproj",
-              "ToolTip": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw04_za01\\cw04_za01.csproj",
-              "RelativeToolTip": "cw04_za01\\cw04_za01.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-14T14:32:13.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw05_zad02\\Program.cs",
-              "RelativeDocumentMoniker": "cw05_zad02\\Program.cs",
-              "ToolTip": "C:\\#ProjektyGitHub\\pp-cwiczenia\\cw05_zad02\\Program.cs",
-              "RelativeToolTip": "cw05_zad02\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T13:18:51.211Z",
+              "WhenOpened": "2026-06-14T18:30:53.439Z",
               "EditorCaption": ""
             }
           ]
