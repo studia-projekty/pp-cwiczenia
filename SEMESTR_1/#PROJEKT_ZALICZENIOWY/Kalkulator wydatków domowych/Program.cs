@@ -1,32 +1,32 @@
-﻿/*
-📌 Temat zadania: Kalkulator wydatków domowych
-📝 Opis zadania: Napisz aplikację konsolową w języku C#, która pozwoli użytkownikowi zarządzać swoimi wydatkami domowymi. Program powinien umożliwiać:
+﻿/* 
+ Temat zadania: Kalkulator wydatków domowych
+ Opis zadania: Napisz aplikację konsolową w języku C#, która pozwoli użytkownikowi zarządzać swoimi wydatkami domowymi. Program powinien umożliwiać:
 	Dodawanie wydatków (nazwa wydatku i kwota).
 	Wyświetlanie listy wszystkich wydatków.
 	Obliczanie łącznej kwoty wydatków.
 	Znalezienie wydatku o najwyższej wartości.
 	Wyjście z programu.
 
-⚙️ Wymagania funkcjonalne:
+Wymagania funkcjonalne:
 	Program powinien działać w pętli, dopóki użytkownik nie wybierze opcji wyjścia.
 	Wydatki powinny być przechowywane w odpowiedniej strukturze danych (np. lista).
 	Użytkownik wybiera operację z menu za pomocą odpowiedniego numeru.
 
-💻 Przykładowe menu: 
+Przykładowe menu: 
 	1. Dodaj wydatek 
 	2. Wyświetl listę wydatków 
 	3. Oblicz łączną kwotę wydatków 
 	4. Znajdź największy wydatek 
 	5. Wyjdź Wybierz opcję:
 
-🔍 Szczegóły implementacyjne:
+Szczegóły implementacyjne:
 	Użytkownik wpisuje nazwę wydatku i jego kwotę (kwota może być liczbą zmiennoprzecinkową).
 	W przypadku wyświetlania wydatków należy pokazać ich nazwę i kwotę.
 	Dla opcji obliczania łącznej kwoty program powinien zwrócić sumę wszystkich wydatków.
 	Dla opcji znalezienia największego wydatku należy zwrócić nazwę wydatku i jego kwotę.
 	Program kończy działanie, gdy użytkownik wybierze opcję wyjścia.
 
-🚀 Przykład działania: 
+Przykład działania: 
 	1. Dodaj wydatek
 	2. Wyświetl listę wydatków
 	3. Oblicz łączną kwotę wydatków
@@ -45,7 +45,7 @@
 	Lista wydatków:
 	1. Jedzenie - 150.50
 
-📊 Kryteria oceny:
+Kryteria oceny:
 	Poprawność działania wszystkich funkcji.
 	Czytelność kodu (w tym stosowanie odpowiednich nazw zmiennych i komentarzy).
 	Obsługa błędów (np. walidacja wprowadzonej kwoty, obsługa pustej listy wydatków przy wyborze opcji 2, 3 lub 4).
@@ -56,7 +56,6 @@
 int opcjaInput;
 
 List<(string nazwa, decimal kwota)> listaWydatkow = new();
-
 
 do
 {
@@ -91,7 +90,7 @@ do
             "(aby cofnąć wpisz \"anuluj\")\n"
 			);
 
-			Console.Write("\nWpisz nazwę wydatku (np. jedzenie): ");
+			Console.Write("\nWpisz nazwę wydatku (np. pizza): ");
 
             string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
             				
@@ -105,7 +104,9 @@ do
 			while (true)// petla po to zeby moc wpisac kwote ponownie w przypadku bledu
 			{
 				var kwotaInput = Console.ReadLine();
-				var parsujKwote = decimal.TryParse(kwotaInput, out decimal decimalKwotaInput);
+				var kwotaZamienPrzecinek = kwotaInput.Replace(",", ".");
+
+				var parsujKwote = decimal.TryParse(kwotaZamienPrzecinek, out decimal decimalKwotaInput);
 
                 if (kwotaInput == "anuluj")
                 {
