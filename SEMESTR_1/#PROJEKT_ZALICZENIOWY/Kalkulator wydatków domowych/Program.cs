@@ -66,17 +66,21 @@ do
 		"======================================\n"
     );
 	Console.WriteLine(
-		"1.Dodaj wydatek \n" +
+        "1.Dodaj wydatek \n" +
 		"2.Wyświetl listę wydatków \n" +
 		"3.Oblicz łączną kwotę wydatków \n" +
 		"4.Znajdź największy wydatek \n" +
 		"5.Wyjdź \n"
 	);
 
-	Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput);
+    Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput); //pobranie opcji od uzytkownika i walidacja czy jest intem
 
 	switch (opcjaInput)
 	{
+		default: // opcje poza zakresem 1-5
+            Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
+			break;
+
 		case 1: // dodawanie wydatku
 
             Console.Write(
@@ -85,13 +89,13 @@ do
 			"-- Dodaj wydatek --\n" +
 			"-------------------\n"
 			);
-			Console.Write("Wpisz nazwę wydatku (np. jedzenie, paliwo): "); string wydatekNazwaInput = Console.ReadLine();
+			Console.Write("Wpisz nazwę wydatku (np. jedzenie, paliwo): "); string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
 			Console.Write("Wpisz kwotę wydatku (np, 150.50): ");
 
 			
 			while (true)
 			{	
-				if (decimal.TryParse(Console.ReadLine(), out decimal kwotaInput) == false)//sprawdzanie czy kwota poprawna
+				if (decimal.TryParse(Console.ReadLine(), out decimal kwotaInput) == false)//walidacja czy kwota jest poprawna
                 {
 					Console.WriteLine("Nieprawidłowa kwota. Proszę spróbować ponownie.");
 				}
@@ -112,23 +116,55 @@ do
 			"--------------------\n"
 			);
 
-			
-			foreach (var item in listaWydatkow)
+			if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
 			{
-                wydatekID++;
-                Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł \n");
+				Console.WriteLine("Brak wpisów. \n");
 			}
+			else
+			{
+				foreach (var item in listaWydatkow)
+				{
+					wydatekID++;//zwieksza numer pozycji na liscie
+					Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł \n");
+				}
+			}
+			
 
             break;
 
 
         case 3: // Suma wydatkow
+            Console.Write(
+            "\n" +
+            "-------------------\n" +
+            "-- Suma wydatków --\n" +
+            "-------------------\n"
+            );
+            if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
+            {
+                Console.WriteLine("Brak wpisów. \n");
+            } 
+			else
+			{
+
+			}
 			break;
+
         case 4: // Największy wydatek
+            Console.Write(
+            "\n" +
+            "-------------------------\n" +
+            "-- Największy wydatków --\n" +
+            "-------------------------\n"
+            );
+            if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
+            {
+                Console.WriteLine("Brak wpisów. \n");
+            }
             break;
-		case 5: // Exit
+
+		case 5: // wyjscie
             break;
     }
-
 
 } while (opcjaInput != 5);
