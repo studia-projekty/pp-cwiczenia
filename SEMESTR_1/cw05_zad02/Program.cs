@@ -3,27 +3,28 @@
 using System.Security.Authentication.ExtendedProtection;
 
 
-    double wartosc = 0;
-    List<(string nazwa, double cena, int ilosc)> lista = new List<(string nazwa, double cena, int ilosc)>
-
-{
-(nazwa: "ProduktA", cena: 10.00, ilosc: 1),
-(nazwa: "ProduktB", cena: 20.00, ilosc: 1),
-(nazwa: "ProduktC", cena: 30.00, ilosc: 1),
-(nazwa: "ProduktD", cena: 40.00, ilosc: 1),
-(nazwa: "ProduktE", cena: 50.00, ilosc: 1)
-
-};
+double wartosc = 0;
+List<(string nazwa, double cena, int ilosc)> lista = new();
 
 
-    foreach (var produkt in lista)
+lista.Add((nazwa: "produktA", cena: 10.00, ilosc: 1));
+lista.Add((nazwa: "produktB", cena: 20.00, ilosc: 2));
+lista.Add((nazwa: "produktC", cena: 30.00, ilosc: 2));
+lista.Add((nazwa: "produktD", cena: 40.00, ilosc: 3));
+
+
+
+foreach (var produkt in lista)
     {
 
         wartosc = wartosc + (produkt.cena * produkt.ilosc);
 
+    Console.WriteLine("Nazwa: " + produkt.nazwa + " Cena: " + produkt.cena + " Ilość: " + produkt.ilosc + "\n");
     }
 
-    Console.WriteLine(wartosc);
+
+
+    Console.WriteLine($"Wartość: {wartosc}");
 
 
 
