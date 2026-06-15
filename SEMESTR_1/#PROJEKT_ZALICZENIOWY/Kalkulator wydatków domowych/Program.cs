@@ -52,18 +52,19 @@ Kryteria oceny:
 	Działające menu z możliwością powrotu do głównego ekranu po każdej operacji.
 */
 
-
 int opcjaInput;
 
 List<(string nazwa, decimal kwota)> listaWydatkow = new();
 
 do
 {
-	Console.Write(
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.Write(
 		"======================================\n" +
 		"==== Kalkulator wydatków domowych ====\n" +
 		"======================================\n"
     );
+	Console.ResetColor();
 	Console.WriteLine(
         "1.Dodaj wydatek \n" +
 		"2.Wyświetl listę wydatków \n" +
@@ -72,16 +73,19 @@ do
 		"5.Wyjdź \n"
 	);
 
-    Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput); //pobranie opcji od uzytkownika i walidacja czy jest intem
+    //pobranie opcji od uzytkownika i walidacja czy jest intem, jesli nie to zwraca false czyli 0.
+    Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput); 
 
 	switch (opcjaInput)
 	{
 		default: // opcje poza zakresem 1-5
-            Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
-			break;
+            Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
+            Console.ResetColor();
+            break;
 
 		case 1: // dodawanie wydatku
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
 			"\n" +
 			"------------------------\n" +
@@ -89,6 +93,7 @@ do
 			"------------------------\n" +
             "(aby cofnąć wpisz \"anuluj\")\n"
 			);
+			Console.ResetColor();
 
 			Console.Write("\nWpisz nazwę wydatku (np. pizza): ");
 
@@ -114,29 +119,38 @@ do
                 }
                 else if (parsujKwote == false)//walidacja czy kwota jest poprawna
                 {
-					Console.WriteLine("Nieprawidłowa kwota. Spróbuj ponownie lub wpisz \"anuluj\", aby cofnąć.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Nieprawidłowa kwota. Spróbuj ponownie lub wpisz \"anuluj\", aby cofnąć.");
+					Console.ResetColor();
 				}
                 else //dodaje wydatek do listy jesli kwota poprawna i brejkuje petle
                 {
 					listaWydatkow.Add((wydatekNazwaInput, decimalKwotaInput));
-					Console.WriteLine("Wpis dodany pomyślnie. \n");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\nWpis dodany pomyślnie. \n");
+					Console.ResetColor();
 					break;
 				}
 			}
 			break;
 
 		case 2: // lista wydatków
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
 			"\n" +
 			"--------------------\n" +
 			"-- Lista wydatków --\n" +
 			"--------------------\n"
 			);
+			Console.ResetColor();
             int wydatekID = 0;
             if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
 			{
-				Console.WriteLine("Brak wpisów. \n");
-			}
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Brak wpisów. \n");
+                Console.ResetColor();
+            }
 			else
 			{
 				foreach (var item in listaWydatkow)
@@ -146,21 +160,26 @@ do
 				}
 				Console.WriteLine();
 			}
-			
 
+            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ReadKey();
             break;
 
 
         case 3: // Suma wydatkow
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
             "\n" +
             "-------------------\n" +
             "-- Suma wydatków --\n" +
             "-------------------\n"
             );
+			Console.ResetColor();
             if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Brak wpisów. \n");
+				Console.ResetColor();
             } 
 			else
 			{
@@ -172,18 +191,24 @@ do
                 }
 				Console.WriteLine($"Suma wydatków: {sumaWydatkow:F2}zł \n");
             }
-			break;
+            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ReadKey();
+            break;
 
         case 4: // Największy wydatek
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
             "\n" +
-            "-------------------------\n" +
+            "------------------------\n" +
             "-- Największy wydatek --\n" +
-            "-------------------------\n"
+            "------------------------\n"
             );
+			Console.ResetColor();
             if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Brak wpisów. \n");
+                Console.ResetColor();
             }
 			else
 			{
@@ -198,6 +223,8 @@ do
 				}
 				Console.WriteLine($"Największy wydatek to: {najwiekszyWydatek.nazwa} - {najwiekszyWydatek.kwota:F2}\n");
 			}
+            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ReadKey();
             break;
 
 		case 5: // wyjscie
