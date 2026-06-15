@@ -56,23 +56,23 @@ do
 		default: // opcje poza zakresem 1-5
 				////////////////////////////
             Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
+				Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
             Console.ResetColor();
             break;
 				 /////////////////////
 		case 1: // dodawanie wydatku
 			   //////////////////////
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(
+			Console.Write(
 			"\n" +
 			"------------------------\n" +
 			"---- Dodaj wydatek -----\n" +
-			"------------------------\n" +
-            "(aby cofnąć wpisz \"anuluj\")\n"
-			);
-			Console.ResetColor();
+			"------------------------\n");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.Write("aby cofnąć wpisz \"anuluj\"\n");
+            Console.ResetColor();
 
-			Console.Write("\nWpisz nazwę wydatku (np. pizza): ");
+            Console.Write("\nWpisz nazwę wydatku (np. pizza): ");
 			 
             // pobranie nazwy od uzytkownika
             string wydatekNazwaInput = Console.ReadLine();
@@ -139,10 +139,13 @@ do
                     wydatekID++;//zwieksza numer pozycji na liscie
 					Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł");
 				}
-				Console.WriteLine();
+				
 			}
 
-            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.WriteLine("\nNaciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ResetColor();
+
             Console.ReadKey();
             break;
 			 
@@ -160,7 +163,7 @@ do
             if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Brak wpisów. \n");
+					Console.WriteLine("Brak wpisów. \n");
 				Console.ResetColor();
             } 
 			else
@@ -171,9 +174,16 @@ do
                 {
 					sumaWydatkow += item.kwota;
                 }
-				Console.WriteLine($"Suma wydatków: {sumaWydatkow:F2}zł \n");
+				
+                Console.Write($"Suma wydatków: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+					Console.Write($" {sumaWydatkow:F2}zł \n");
+                Console.ResetColor();
             }
-            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.WriteLine("\nNaciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ResetColor();
+
             Console.ReadKey();
             break;
 				  /////////////////////
@@ -198,17 +208,39 @@ do
 			else
 			{
 				var najwiekszyWydatek = listaWydatkow[0];
-
-				foreach (var item in listaWydatkow)
+                //sprawdzanie najwiekszego wydatku w liscie
+                foreach (var item in listaWydatkow)
 				{
 					if (najwiekszyWydatek.kwota < item.kwota) //sprawdza czy aktualny najwiekszy wydatek jest mniejszy od itemka z listy
 					{
 						najwiekszyWydatek = item;
 					}
 				}
-				Console.WriteLine($"Największy wydatek to: {najwiekszyWydatek.nazwa} - {najwiekszyWydatek.kwota:F2}zł\n");
+
+				Console.Write($"Największy wydatek: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+					Console.Write($"{najwiekszyWydatek.kwota:F2}zł \n");
+                Console.ResetColor();
+
+
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+					Console.WriteLine("Pozycje o tej kwocie:");
+				Console.ResetColor();
+
+
+                //wypisanie wszystkich pozycji o tej samej kwocie co najwyzsza
+                foreach (var item in listaWydatkow)
+				{
+					if (item.kwota == najwiekszyWydatek.kwota)
+					{
+						Console.Write($" - ");
+						Console.Write($"{item.nazwa} \n");
+                    }
+				}
 			}
-            Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+				Console.WriteLine("\nNaciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
+            Console.ResetColor();
             Console.ReadKey();
             break;
 				  ///////////
