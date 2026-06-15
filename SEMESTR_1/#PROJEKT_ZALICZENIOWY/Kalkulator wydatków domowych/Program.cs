@@ -1,6 +1,7 @@
 ﻿/* 
  Temat zadania: Kalkulator wydatków domowych
- Opis zadania: Napisz aplikację konsolową w języku C#, która pozwoli użytkownikowi zarządzać swoimi wydatkami domowymi. Program powinien umożliwiać:
+ Opis zadania: 
+	Napisz aplikację konsolową w języku C#, która pozwoli użytkownikowi zarządzać swoimi wydatkami domowymi. Program powinien umożliwiać:
 	Dodawanie wydatków (nazwa wydatku i kwota).
 	Wyświetlanie listy wszystkich wydatków.
 	Obliczanie łącznej kwoty wydatków.
@@ -12,38 +13,12 @@ Wymagania funkcjonalne:
 	Wydatki powinny być przechowywane w odpowiedniej strukturze danych (np. lista).
 	Użytkownik wybiera operację z menu za pomocą odpowiedniego numeru.
 
-Przykładowe menu: 
-	1. Dodaj wydatek 
-	2. Wyświetl listę wydatków 
-	3. Oblicz łączną kwotę wydatków 
-	4. Znajdź największy wydatek 
-	5. Wyjdź Wybierz opcję:
-
 Szczegóły implementacyjne:
 	Użytkownik wpisuje nazwę wydatku i jego kwotę (kwota może być liczbą zmiennoprzecinkową).
 	W przypadku wyświetlania wydatków należy pokazać ich nazwę i kwotę.
 	Dla opcji obliczania łącznej kwoty program powinien zwrócić sumę wszystkich wydatków.
 	Dla opcji znalezienia największego wydatku należy zwrócić nazwę wydatku i jego kwotę.
 	Program kończy działanie, gdy użytkownik wybierze opcję wyjścia.
-
-Przykład działania: 
-	1. Dodaj wydatek
-	2. Wyświetl listę wydatków
-	3. Oblicz łączną kwotę wydatków
-	4. Znajdź największy wydatek
-	5. Wyjdź Wybierz opcję: 1
- 
-	Podaj nazwę wydatku: Jedzenie
-	Podaj kwotę wydatku: 150.50
- 
-	1. Dodaj wydatek
-	2. Wyświetl listę wydatków
-	3. Oblicz łączną kwotę wydatków
-	4. Znajdź największy wydatek
-	5. Wyjdź Wybierz opcję: 2
- 
-	Lista wydatków:
-	1. Jedzenie - 150.50
 
 Kryteria oceny:
 	Poprawność działania wszystkich funkcji.
@@ -72,19 +47,21 @@ do
 		"4.Znajdź największy wydatek \n" +
 		"5.Wyjdź \n"
 	);
-
+	
     //pobranie opcji od uzytkownika i walidacja czy jest intem, jesli nie to zwraca false czyli 0.
     Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput); 
 
 	switch (opcjaInput)
-	{
+	{			  ///////////////////////////
 		default: // opcje poza zakresem 1-5
+				////////////////////////////
             Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("\nNiepoprawny wybór. Wybierz opcje od 1 do 5. \n");
             Console.ResetColor();
             break;
-
+				 /////////////////////
 		case 1: // dodawanie wydatku
+			   //////////////////////
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
 			"\n" +
@@ -96,10 +73,12 @@ do
 			Console.ResetColor();
 
 			Console.Write("\nWpisz nazwę wydatku (np. pizza): ");
+			 
+            // pobranie nazwy od uzytkownika
+            string wydatekNazwaInput = Console.ReadLine();
 
-            string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
-            				
-			if (wydatekNazwaInput == "anuluj") //walidacja czy uzytkownik chce anulowac dodawanie wydatku
+            //walidacja czy uzytkownik chce anulowac dodawanie wydatku
+            if (wydatekNazwaInput == "anuluj") 
 			{
 				break;
 			}
@@ -108,7 +87,9 @@ do
 
 			while (true)// petla po to zeby moc wpisac kwote ponownie w przypadku bledu
 			{
-				var kwotaInput = Console.ReadLine();
+                 
+                // pobranie kwoty od uzytkownika
+                var kwotaInput = Console.ReadLine();
 				var kwotaZamienPrzecinek = kwotaInput.Replace(",", ".");
 
 				var parsujKwote = decimal.TryParse(kwotaZamienPrzecinek, out decimal decimalKwotaInput);
@@ -133,9 +114,9 @@ do
 				}
 			}
 			break;
-
-		case 2: // lista wydatków
-
+				  //////////////////
+		case 2:  // lista wydatków
+				//////////////////
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
 			"\n" +
@@ -164,9 +145,10 @@ do
             Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
             Console.ReadKey();
             break;
-
-
-        case 3: // Suma wydatkow
+			 
+				  /////////////////
+        case 3:  // Suma wydatkow
+				/////////////////
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
             "\n" +
@@ -194,8 +176,9 @@ do
             Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
             Console.ReadKey();
             break;
-
-        case 4: // Największy wydatek
+				  /////////////////////
+        case 4:  // Największy wydatek
+				/////////////////////
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(
             "\n" +
@@ -204,7 +187,9 @@ do
             "------------------------\n"
             );
 			Console.ResetColor();
-            if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
+
+            //jesli ilosc elementow na liscie wynosi 0 to:
+            if (listaWydatkow.Count == 0) 
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Brak wpisów. \n");
@@ -216,18 +201,19 @@ do
 
 				foreach (var item in listaWydatkow)
 				{
-					if (najwiekszyWydatek.kwota < item.kwota) //sprawdza czy aktualny najwiekszy wydatek jest mniejszy od itemu z listy
+					if (najwiekszyWydatek.kwota < item.kwota) //sprawdza czy aktualny najwiekszy wydatek jest mniejszy od itemka z listy
 					{
 						najwiekszyWydatek = item;
 					}
 				}
-				Console.WriteLine($"Największy wydatek to: {najwiekszyWydatek.nazwa} - {najwiekszyWydatek.kwota:F2}\n");
+				Console.WriteLine($"Największy wydatek to: {najwiekszyWydatek.nazwa} - {najwiekszyWydatek.kwota:F2}zł\n");
 			}
             Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić do menu głównego...\n");
             Console.ReadKey();
             break;
-
-		case 5: // wyjscie
+				  ///////////
+		case 5:  // wyjscie
+				///////////
             break;
     }
 
