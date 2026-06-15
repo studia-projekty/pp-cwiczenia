@@ -98,7 +98,7 @@ do
                 {
                     break;
                 }
-                else if (parsujKwote == false)//walidacja czy kwota jest poprawna
+                else if (parsujKwote == false || decimalKwotaInput < 0)//walidacja czy kwota jest poprawna
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nieprawidłowa kwota. Spróbuj ponownie lub wpisz \"anuluj\", aby cofnąć.");
