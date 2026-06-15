@@ -54,7 +54,7 @@
 
 
 int opcjaInput;
-int wydatekID = 0;
+
 List<(string nazwa, decimal kwota)> listaWydatkow = new();
 
 
@@ -89,19 +89,33 @@ do
 			"-- Dodaj wydatek --\n" +
 			"-------------------\n"
 			);
-			Console.Write("Wpisz nazwę wydatku (np. jedzenie, paliwo): "); string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
+			Console.Write("Wpisz nazwę wydatku (np. jedzenie): ");
+
+            string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
+            				
+			if (wydatekNazwaInput == "anuluj") //walidacja czy uzytkownik chce anulowac dodawanie wydatku
+			{
+				break;
+			}
+			
 			Console.Write("Wpisz kwotę wydatku (np, 150.50): ");
 
-			
-			while (true)
-			{	
-				if (decimal.TryParse(Console.ReadLine(), out decimal kwotaInput) == false)//walidacja czy kwota jest poprawna
+			while (true)// petla po to zeby moc wpisac kwote ponownie w przypadku bledu
+			{
+				var kwotaInput = Console.ReadLine();
+				var parsujKwote = decimal.TryParse(kwotaInput, out decimal decimalKwotaInput);
+
+                if (kwotaInput == "anuluj")
                 {
-					Console.WriteLine("Nieprawidłowa kwota. Proszę spróbować ponownie.");
+                    break;
+                }
+                else if (parsujKwote == false)//walidacja czy kwota jest poprawna
+                {
+					Console.WriteLine("Nieprawidłowa kwota. Spróbuj ponownie lub wpisz \"anuluj\", aby cofnąć.");
 				}
 				else
 				{
-					 listaWydatkow.Add((wydatekNazwaInput, kwotaInput));
+					 listaWydatkow.Add((wydatekNazwaInput, decimalKwotaInput));
 					Console.WriteLine("Wpis dodany pomyślnie. \n");
 					break; //brejkuje najbliższą petle jesli kwota poprawna.
 				}
@@ -115,8 +129,8 @@ do
 			"-- Lista wydatków --\n" +
 			"--------------------\n"
 			);
-
-			if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
+            int wydatekID = 0;
+            if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
 			{
 				Console.WriteLine("Brak wpisów. \n");
 			}
@@ -124,9 +138,11 @@ do
 			{
 				foreach (var item in listaWydatkow)
 				{
-					wydatekID++;//zwieksza numer pozycji na liscie
-					Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł \n");
+                    
+                    wydatekID++;//zwieksza numer pozycji na liscie
+					Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł");
 				}
+				Console.WriteLine();
 			}
 			
 
