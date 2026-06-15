@@ -53,14 +53,17 @@
 */
 
 
-string opcja = "";
+int opcjaInput;
+int wydatekID = 0;
+List<(string nazwa, decimal kwota)> listaWydatkow = new();
+
+
 do
 {
-
 	Console.Write(
-		"=====================================\n" +
-		"==== Kalkulator wydatków domowyc ====\n" +
-		"=====================================\n"
+		"======================================\n" +
+		"==== Kalkulator wydatków domowych ====\n" +
+		"======================================\n"
     );
 	Console.WriteLine(
 		"1.Dodaj wydatek \n" +
@@ -70,7 +73,62 @@ do
 		"5.Wyjdź \n"
 	);
 
-	Console.Write("Wybierz opcję: "); opcja = Console.ReadLine();
+	Console.Write("Wybierz opcję: "); int.TryParse(Console.ReadLine(), out opcjaInput);
+
+	switch (opcjaInput)
+	{
+		case 1: // dodawanie wydatku
+
+            Console.Write(
+			"\n" +
+			"-------------------\n" +
+			"-- Dodaj wydatek --\n" +
+			"-------------------\n"
+			);
+			Console.Write("Wpisz nazwę wydatku (np. jedzenie, paliwo): "); string wydatekNazwaInput = Console.ReadLine();
+			Console.Write("Wpisz kwotę wydatku (np, 150.50): ");
+
+			
+			while (true)
+			{	
+				if (decimal.TryParse(Console.ReadLine(), out decimal kwotaInput) == false)//sprawdzanie czy kwota poprawna
+                {
+					Console.WriteLine("Nieprawidłowa kwota. Proszę spróbować ponownie.");
+				}
+				else
+				{
+					 listaWydatkow.Add((wydatekNazwaInput, kwotaInput));
+					Console.WriteLine("Wpis dodany pomyślnie. \n");
+					break; //brejkuje najbliższą petle jesli kwota poprawna.
+				}
+			}
+			break;
+
+		case 2: // lista wydatków
+            Console.Write(
+			"\n" +
+			"--------------------\n" +
+			"-- Lista wydatków --\n" +
+			"--------------------\n"
+			);
+
+			
+			foreach (var item in listaWydatkow)
+			{
+                wydatekID++;
+                Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł \n");
+			}
+
+            break;
 
 
-} while (opcja != "5");
+        case 3: // Suma wydatkow
+			break;
+        case 4: // Największy wydatek
+            break;
+		case 5: // Exit
+            break;
+    }
+
+
+} while (opcjaInput != 5);
