@@ -85,11 +85,13 @@ do
 
             Console.Write(
 			"\n" +
-			"-------------------\n" +
-			"-- Dodaj wydatek --\n" +
-			"-------------------\n"
+			"------------------------\n" +
+			"---- Dodaj wydatek -----\n" +
+			"------------------------\n" +
+            "(aby cofnąć wpisz \"anuluj\")\n"
 			);
-			Console.Write("Wpisz nazwę wydatku (np. jedzenie): ");
+
+			Console.Write("\nWpisz nazwę wydatku (np. jedzenie): ");
 
             string wydatekNazwaInput = Console.ReadLine();// pobranie nazwy od uzytkownika
             				
@@ -98,7 +100,7 @@ do
 				break;
 			}
 			
-			Console.Write("Wpisz kwotę wydatku (np, 150.50): ");
+			Console.Write("Wpisz kwotę wydatku (np, 12.99): ");
 
 			while (true)// petla po to zeby moc wpisac kwote ponownie w przypadku bledu
 			{
@@ -113,11 +115,11 @@ do
                 {
 					Console.WriteLine("Nieprawidłowa kwota. Spróbuj ponownie lub wpisz \"anuluj\", aby cofnąć.");
 				}
-				else
-				{
-					 listaWydatkow.Add((wydatekNazwaInput, decimalKwotaInput));
+                else //dodaje wydatek do listy jesli kwota poprawna i brejkuje petle
+                {
+					listaWydatkow.Add((wydatekNazwaInput, decimalKwotaInput));
 					Console.WriteLine("Wpis dodany pomyślnie. \n");
-					break; //brejkuje najbliższą petle jesli kwota poprawna.
+					break;
 				}
 			}
 			break;
@@ -138,7 +140,6 @@ do
 			{
 				foreach (var item in listaWydatkow)
 				{
-                    
                     wydatekID++;//zwieksza numer pozycji na liscie
 					Console.WriteLine($"{wydatekID}. {item.nazwa} | {item.kwota:F2}zł");
 				}
@@ -162,21 +163,40 @@ do
             } 
 			else
 			{
+                decimal sumaWydatkow = 0;
 
-			}
+                foreach (var item in listaWydatkow)
+                {
+					sumaWydatkow += item.kwota;
+                }
+				Console.WriteLine($"Suma wydatków: {sumaWydatkow:F2}zł \n");
+            }
 			break;
 
         case 4: // Największy wydatek
             Console.Write(
             "\n" +
             "-------------------------\n" +
-            "-- Największy wydatków --\n" +
+            "-- Największy wydatek --\n" +
             "-------------------------\n"
             );
             if (listaWydatkow.Count == 0) //jesli ilosc elementow na liscie wynosi 0 to:
             {
                 Console.WriteLine("Brak wpisów. \n");
             }
+			else
+			{
+				var najwiekszyWydatek = listaWydatkow[0];
+
+				foreach (var item in listaWydatkow)
+				{
+					if (najwiekszyWydatek.kwota < item.kwota) //sprawdza czy aktualny najwiekszy wydatek jest mniejszy od itemu z listy
+					{
+						najwiekszyWydatek = item;
+					}
+				}
+				Console.WriteLine($"Największy wydatek to: {najwiekszyWydatek.nazwa} - {najwiekszyWydatek.kwota:F2}\n");
+			}
             break;
 
 		case 5: // wyjscie
